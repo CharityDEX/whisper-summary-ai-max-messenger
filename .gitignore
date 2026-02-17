@@ -1,0 +1,44 @@
+# Environment & secrets
+.env
+.env.*
+phonic-agility-*.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+
+# Media files
+*.mp3
+*.mp4
+*.ogg
+*.part
+
+# Data files
+*.pkl
+*.session
+*.pdf
+
+# Fonts
+*.TTF
+*.ttf
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Claude Code
+.claude/
+
+# Logs
+logs/
+
+# Docker
+postgres_data/

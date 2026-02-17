@@ -1,0 +1,135 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Voice Summary Dashboard</h1>
+            <p class="lead">Добро пожаловать в панель управления системой обработки голосовых сообщений</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="card-title">{{ stats.total_users }}</h4>
+                            <p class="card-text">Всего пользователей</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-info text-white mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="card-title">{{ stats.active_sessions }}</h4>
+                            <p class="card-text">Активные сессии</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-cogs fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-success text-white mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="card-title">{{ stats.successful_sessions }}</h4>
+                            <p class="card-text">Успешные сессии</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-check-circle fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-warning text-dark mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4 class="card-title">{{ stats.total_payments }}</h4>
+                            <p class="card-text">Всего платежей</p>
+                        </div>
+                        <div class="align-self-center">
+                            <i class="fas fa-dollar-sign fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Быстрые действия</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/admin/user/" class="btn btn-outline-primary btn-block mb-2">
+                                <i class="fas fa-users"></i> Управление пользователями
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/admin/processingsession/" class="btn btn-outline-info btn-block mb-2">
+                                <i class="fas fa-tasks"></i> Сессии обработки
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/admin/payment/" class="btn btn-outline-success btn-block mb-2">
+                                <i class="fas fa-money-bill"></i> Платежи
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/admin/audio/" class="btn btn-outline-secondary btn-block mb-2">
+                                <i class="fas fa-volume-up"></i> Аудиозаписи
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/admin/llmrequest/" class="btn btn-outline-warning btn-block mb-2">
+                                <i class="fas fa-brain"></i> LLM запросы
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/admin/filedownload/" class="btn btn-outline-dark btn-block mb-2">
+                                <i class="fas fa-download"></i> Загрузки файлов
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+</style>
+{% endblock %}
